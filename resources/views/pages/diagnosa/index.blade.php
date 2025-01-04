@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endpush
-@section('title', 'Obat')
+@section('title', 'Diagnosa')
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">DataTable @yield('title')</h3>
-                    <a href="{{ route('obat.create') }}" class="btn bg-indigo float-right"><i class="fas fa-plus"></i></a>
+                    <a href="{{ route('diagnosa.create') }}" class="btn bg-indigo float-right"><i class="fas fa-plus"></i></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -21,24 +21,22 @@
                         <thead>
                             <tr>
                                 <th width="10px">No</th>
-                                <th>Nama Obat</th>
-                                <th>Harga</th>
-                                <th>Jenis</th>
-                                <th>Stok</th>
+                                <th>Tanggal</th>
+                                <th>Keluhan</th>
+                                <th>Hasil Diagnosa</th>
+                                <th>Tindakan</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($obat as $item)
+                            @foreach ($diagnosa as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->harga }}</td>
-                                    <td>{{ $item->jenis }}</td>
-                                    <td>{{ $item->stok }}</td>
-                                    <td><img src="{{ Storage::disk('public')->url($item->foto) }}" width="200px"></td>
-                                   <td>
-                                    <a href="{{ route('obat.edit',$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="{{ route('obat.delete',$item->id) }}" onclick="return confirm('Apakah Anda Ingin Menghapus?');" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                    <td>{{ $item->tanggal }}</td>
+                                    <td>{{ $item->keluhan }}</td>
+                                    <td>{{ $item->hasil_keluhan }}</td>
+                                    <td>{{ $item->tindakan }}</td>
+                                    <a href="{{ route('diagnosa.edit',$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('diagnosa.delete',$item->id) }}" onclick="return confirm('Apakah Anda Ingin Menghapus?');" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                    </td>
                                 </tr>
                             @endforeach
@@ -86,4 +84,3 @@
         });
     </script>
 @endpush
-

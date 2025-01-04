@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\TreatmentController;
-use App\Http\Controllers\PasienController;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\TreatmentController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +23,24 @@ Route::controller(TreatmentController::class)->group(function () {
     Route::post('/treatment/update/{id}', 'update')->name('treatment.update');
     Route::post('/treatment/save', 'store')->name('treatment.save');
     Route::get('/treatment/delete/{id}', 'destroy')->name('treatment.delete');
+});
+
+Route::controller(ObatController::class)->group(function () {
+    Route::get('/obat', 'index')->name('obat');
+    Route::get('/obat/tambah','create')->name('obat.create');
+    Route::get('/obat/edit/{id}', 'edit')->name('obat.edit');
+    Route::post('/obat/update/{id}', 'update')->name('obat.update');
+    Route::post('/obat/save', 'store')->name('obat.save');
+    Route::get('/obat/delete/{id}', 'destroy')->name('obat.delete');
+});
+
+Route::controller(DiagnosaController::class)->group(function () {
+    Route::get('/diagnosa', 'index')->name('diagnosa');
+    Route::get('/diagnosa/tambah','create')->name('diagnosa.create');
+    Route::get('/diagnosa/edit/{id}', 'edit')->name('diagnosa.edit');
+    Route::post('/diagnosa/update/{id}', 'update')->name('diagnosa.update');
+    Route::post('/diagnosa/save', 'store')->name('diagnosa.save');
+    Route::get('/diagnosa/delete/{id}', 'destroy')->name('diagnosa.delete');
 });
 
 Route::controller(PasienController::class)->group(function (){

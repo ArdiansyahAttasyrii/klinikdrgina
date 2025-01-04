@@ -44,11 +44,29 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('diagnosa') }}"
+                                class="nav-link {{ request()->routeIs('diagnosa') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-heart"></i>
+                                <p>
+                                    Diagnosa
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('pasien') }}"
                                 class="nav-link {{ request()->routeIs('pasien') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-heart"></i>
                                 <p>
                                     Pasien
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('obat') }}"
+                                class="nav-link {{ request()->routeIs('obat') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-heart"></i>
+                                <p>
+                                    Obat
                                 </p>
                             </a>
                         </li>
