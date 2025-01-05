@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class TreatmentController extends Controller
+class DiagnosaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -65,7 +65,7 @@ class TreatmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'tanggal' => 'required|string|max:255',
+            'tanggal' => 'required|date|max:255',
             'keluhan' => 'required|string|max:255',
             'hasil_diagnosa' => 'required|string|max:255',
             'tindakan' => 'required|string|max:255',

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\JanjitemuController;
 use App\Http\Controllers\TreatmentController;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -41,6 +42,15 @@ Route::controller(DiagnosaController::class)->group(function () {
     Route::post('/diagnosa/update/{id}', 'update')->name('diagnosa.update');
     Route::post('/diagnosa/save', 'store')->name('diagnosa.save');
     Route::get('/diagnosa/delete/{id}', 'destroy')->name('diagnosa.delete');
+});
+
+Route::controller(JanjitemuController::class)->group(function () {
+    Route::get('/janjitemu', 'index')->name('janji_temu');
+    Route::get('/janjitemu/tambah','create')->name('janji_temu.create');
+    Route::get('/janjitemu/edit/{id}', 'edit')->name('janji_temu.edit');
+    Route::post('/janjitemu/update/{id}', 'update')->name('janji_temu.update');
+    Route::post('/janjitemu/save', 'store')->name('janji_temu.save');
+    Route::get('/janjitemu/delete/{id}', 'destroy')->name('janji_temu.delete');
 });
 
 Route::controller(PasienController::class)->group(function (){
