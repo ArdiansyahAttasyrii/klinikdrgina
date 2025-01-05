@@ -11,7 +11,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('janjitemu.update', $janjitemu->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('janji_temu.update', $janjitemu->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="card-body">
             <div class="form-group">
@@ -38,7 +38,7 @@
           <!-- /.card-body -->
 
           <div class="card-footer">
-            <a href="{{ route('janjitemu') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('janji_temu') }}" class="btn btn-secondary">Kembali</a>
             <button type="submit" class="btn btn-primary float-right">Submit</button>
           </div>
           

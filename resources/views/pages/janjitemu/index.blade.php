@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">DataTable @yield('title')</h3>
-                    <a href="{{ route('janjitemu.create') }}" class="btn bg-indigo float-right"><i class="fas fa-plus"></i></a>
+                    <a href="{{ route('janji_temu.create') }}" class="btn bg-indigo float-right"><i class="fas fa-plus"></i></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -38,8 +38,8 @@
                                     <td>{{ $item->no_telpon }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->no_antrian }}</td>
-                                    <a href="{{ route('janjitemu.edit',$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="{{ route('janjitemu.delete',$item->id) }}" onclick="return confirm('Apakah Anda Ingin Menghapus?');" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('janji_temu.edit',$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('janji_temu.delete',$item->id) }}" onclick="return confirm('Apakah Anda Ingin Menghapus?');" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                    </td>
                                 </tr>
                             @endforeach

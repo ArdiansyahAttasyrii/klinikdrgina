@@ -40,8 +40,8 @@ class JanjitemuController extends Controller
 
         DB::table('tbl_janjitemu')->insert([
             'nama' => $request->nama,
-            'tanggal_temu' => $request->tanggal_temu,  // Sesuaikan dengan nama input field
-            'no_telpon' => $request->no_telpon,        // Sesuaikan dengan nama input field
+            'tanggal_temu' => $request->tanggal_temu,  
+            'no_telpon' => $request->no_telpon,        
             'email' => $request->email,
             'no_antrian' => $request->no_antrian,
         ]);
