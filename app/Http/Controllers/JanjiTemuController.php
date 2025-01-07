@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class JanjitemuController extends Controller
+class JanjiTemuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class JanjitemuController extends Controller
     public function index()
     {
         $janjitemu = DB::table('tbl_janjitemu')->get();
-        return view('pages.janji_temu.index', compact('janjitemu'));
+        return view('pages.janjitemu.index', compact('janjitemu'));
     }
 
     /**
@@ -40,8 +40,8 @@ class JanjitemuController extends Controller
 
         DB::table('tbl_janjitemu')->insert([
             'nama' => $request->nama,
-            'tanggal_temu' => $request->tanggal_temu,  
-            'no_telpon' => $request->no_telpon,        
+            'tanggal_temu' => $request->tanggal_temu,
+            'no_telpon' => $request->no_telpon,
             'email' => $request->email,
             'no_antrian' => $request->no_antrian,
         ]);
@@ -81,8 +81,8 @@ class JanjitemuController extends Controller
 
         DB::table('tbl_janjitemu')->where('id', $id)->update([
             'nama' => $request->nama,
-            'tanggal_temu' => $request->tanggal_temu,  
-            'no_telpon' => $request->no_telpon,        
+            'tanggal_temu' => $request->tanggal_temu,
+            'no_telpon' => $request->no_telpon,
             'email' => $request->email,
             'no_antrian' => $request->no_antrian,
             'updated_at' => now(),
