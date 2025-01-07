@@ -19,16 +19,20 @@
                 <input type="text" class="form-control" name="name"  placeholder="Masukkan Nama Anda">
               </div>
             <div class="form-group">
-                <label for="tgl">Tempat, Tanggal Lahir</label>
-                <input type="date" class="form-control" name="tempat_tanggallahir"  placeholder="Masukkan Tanggal Lahir Anda">
+                <label for="alamat">Alamat</label>
+                <input type="text" class="form-control" name="alamat"  placeholder="Masukkan Alamat Anda">
               </div>
             <div class="form-group">
-              <label for="alamat">Alamat</label>
-              <input type="text" class="form-control" name="alamat"  placeholder="Masukkan Alamat Anda">
+              <label for="tmp_lahir">Tempat Lahir</label>
+              <input type="text" class="form-control" name="tempat_lahir"  placeholder="Masukkan  Anda">
+            </div>
+            <div class="form-group">
+              <label for="tgl_lahir">Tanggal Lahir</label>
+              <input type="date" class="form-control" name="tgl_lahir"  placeholder="Masukkan">
             </div>
             <div class="form-group">
               <label for="kontak">Kontak</label>
-              <input type="number" class="form-control" name="kontak"  placeholder="Masukkan Kontak">
+              <input type="number" class="form-control" name="kontak"  placeholder="Masukkan">
             </div>
             <div class="form-group">
               <label for="fotoPasien">Foto Pasien</label>

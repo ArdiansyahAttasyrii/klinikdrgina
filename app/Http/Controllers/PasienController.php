@@ -13,7 +13,14 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $pasien = DB::table('tbl_pasien')->get();
+        $pasien = DB::table('tbl_pasien')
+        ->join('model_has_roles','users.id','=','model_has_roles.model_id')
+        ->join('roles','model_has_roles.role_id','=','roles.id')
+        ->where('roles.name','pasien')
+        ->select('users.*','roles.name as role')
+        ->get();
+            
+
         return view('pages.pasien.index', compact('pasien'));
     }
 
@@ -22,7 +29,7 @@ class PasienController extends Controller
      */
     public function create()
     {
-        return view('pages.pasien.index');
+        return view('pages.pasien.create');
     }
 
     /**

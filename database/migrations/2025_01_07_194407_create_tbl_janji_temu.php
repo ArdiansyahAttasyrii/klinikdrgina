@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbl_pasien', function (Blueprint $table) {
+        Schema::create('tbl_janji_temu', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('tempat,tanggallahir',100);
-            $table->string('alamat',100);
-            $table->string('kontak',100);
-            $table->string('foto',100);
+            $table->unsignedInteger('antrian_id');
+            $table->date('tanggal');
+            $table->time('status',['Pending','Diterima'])->default('Pending');
+            $table->foreign('antrian_id')->references('id')->on('tbl_antrian')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tbl_pasien');
+        Schema::dropIfExists('tbl_janji_temu');
     }
 };

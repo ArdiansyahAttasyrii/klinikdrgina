@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbl_diagnosa', function (Blueprint $table) {
+        Schema::create('tbl_jadwal', function (Blueprint $table) {
             $table->id();
-            $table->string('tanggal');
-            $table->string('keluhan');
-            $table->string('hasil_diagnosa');
-            $table->string('tindakan');
+            $table->string('hari');
+            $table->time('jam_masuk');
+            $table->time('jam_selesai');
+            $table->status('Tersedia','Tidak Tersedia','Sedang Istirahat');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tbl_diagnosa');
+        Schema::dropIfExists('tbl_jadwal');
     }
 };

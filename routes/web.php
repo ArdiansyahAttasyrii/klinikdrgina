@@ -53,5 +53,12 @@ Route::controller(JanjiTemuController::class)->group(function () {
 });
 
 Route::controller(PasienController::class)->group(function () {
-    route::get('/pasien', 'index')->name('pasien');
+    Route::get('/pasien', 'index')->name('pasien');
+    Route::get('/pasien/tambah', 'create')->name('pasien.create');
+    Route::get('/pasien/edit/{id}', 'edit')->name('pasien.edit');
+    Route::post('/pasien/update/{id}', 'update')->name('pasien.update');
+    Route::post('/pasien/save', 'store')->name('pasien.store');
+    Route::get('/pasien/delete/{id}', 'destroy')->name('pasien.delete');
 });
+
+

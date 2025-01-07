@@ -9,6 +9,10 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Alamat</th>
+                <th>Tempat Lahir</th>
+                <th>Tanggal Lahir</th>
+                <th>Kontak</th>
+                <th>Foto</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -18,6 +22,9 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->nama }}</td>
                 <td>{{ $item->alamat }}</td>
+                <td>{{ $item->tempat_tanggal }}</td>
+                <td>{{ $item->tgl_lahir }}</td>
+                <td>{{ $item->kontak }}</td>
                 <td>
                     <a href="{{ route('pasien.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('pasien.destroy', $item->id) }}" method="POST" style="display: inline;">

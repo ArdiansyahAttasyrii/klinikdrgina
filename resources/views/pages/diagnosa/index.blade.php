@@ -21,9 +21,8 @@
                         <thead>
                             <tr>
                                 <th width="10px">No</th>
-                                <th>Tanggal</th>
                                 <th>Keluhan</th>
-                                <th>Hasil Diagnosa</th>
+                                <th>Nama Pasien</th>
                                 <th>Tindakan</th>
                             </tr>
                         </thead>
@@ -31,9 +30,8 @@
                             @foreach ($diagnosa as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->tanggal }}</td>
                                     <td>{{ $item->keluhan }}</td>
-                                    <td>{{ $item->hasil_keluhan }}</td>
+                                    <td>{{ $item->pasien_id }}</td>
                                     <td>{{ $item->tindakan }}</td>
                                     <a href="{{ route('diagnosa.edit',$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ route('diagnosa.delete',$item->id) }}" onclick="return confirm('Apakah Anda Ingin Menghapus?');" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
