@@ -13,7 +13,7 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $treatment = DB::table('tbl_pasien')->get();
+        $pasien = DB::table('tbl_pasien')->get();
         return view('pages.pasien.index', compact('pasien'));
     }
 
@@ -22,7 +22,7 @@ class PasienController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.pasien.index');
     }
 
     /**
@@ -49,7 +49,7 @@ class PasienController extends Controller
             'foto' =>  $path,
         ]);
 
-        return redirect('treatment');
+        return redirect('pasien');
     }
 
     /**
@@ -67,7 +67,7 @@ class PasienController extends Controller
     {
         $pasien = DB::table('tbl_pasien')->where('id', $id)->first();
 
-        return view('pages.pasien.modal', compact('pasien'));
+        return view('pages.pasien.index', compact('pasien'));
     }
 
     /**
@@ -92,7 +92,7 @@ class PasienController extends Controller
             $filePath = $pasien->foto;
         }
 
-        DB::table('pasien_treatment')->where('id', $id)->update([
+        DB::table('tbl_pasien')->where('id', $id)->update([
             'name' => $request->name,
             'tempat_tanggallahir' => $request->tempat_tanggallahir,
             'alamat' => $request->alamat,
@@ -110,7 +110,7 @@ class PasienController extends Controller
      */
     public function destroy($id)
     {
-        $pasien = DB::table('tbl_treatment')->where('id', $id)->first();
+        $pasien = DB::table('tbl_pasien')->where('id', $id)->first();
 
         if ($pasien->foto) {
             Storage::disk('public')->delete($pasien->foto);

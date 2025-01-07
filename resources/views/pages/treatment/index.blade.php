@@ -12,7 +12,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">DataTable @yield('title')</h3>
+                    <h3 class="card-title">Data Table @yield('title')</h3>
                     <a href="{{ route('treatment.create') }}" class="btn bg-indigo float-right"><i class="fas fa-plus"></i></a>
                 </div>
                 <!-- /.card-header -->
