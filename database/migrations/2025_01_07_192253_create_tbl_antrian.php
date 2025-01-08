@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_antrian',100)->unique();
             $table->unsignedBigInteger('pasien_id');
+            $table->unsignedBigInteger('jadwal_id');
             $table->foreign('jadwal_id')->references('id')->on('tbl_jadwal')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('pasien_id')->references('id')->on('tbl_users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

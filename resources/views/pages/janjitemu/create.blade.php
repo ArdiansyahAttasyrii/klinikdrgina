@@ -20,7 +20,7 @@
               </div>
               <div class="form-group">
                 <label for="tanggal_temu">Tanggal Temu</label>
-                <input type="date" class="form-control" name="tanggaltemu" value="{{ $janjitemu->tanggal_temu }}" placeholder="Masukkan Tanggal">
+                <input type="date" class="form-control" name="tanggal_temu" value="{{ $janjitemu->tanggal_temu }}" placeholder="Masukkan Tanggal">
               </div>
               <div class="form-group">
                 <label for="noTelpon">No Telpon</label>

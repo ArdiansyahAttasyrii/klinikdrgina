@@ -79,6 +79,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon far fa-envelope"></i>
+                            <p>
+                              Chat
+                            </p>
+                          </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
